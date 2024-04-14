@@ -1,10 +1,12 @@
 import './App.css'
 import { useStore } from './store/doList'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import ConfettiExplosion from 'react-confetti-explosion'
 
 function App() {
   const { list, setItemList, checkItemList } = useStore()
   const [inputValue, setInputValue] = useState('')
+  const [isExploding, setIsExploding] = useState(false)
 
   const handleOnChange = (e) => {
     setInputValue(e.target.value)
@@ -25,6 +27,11 @@ function App() {
   const hanldeCheckTask = (index) => {
     checkItemList(index);
   }
+
+  useEffect(() => {
+    const doneItem = list.find(item => item.isDone === true);
+    setIsExploding(!!doneItem);
+  }, [list]);
 
   return (
     <>
@@ -47,6 +54,7 @@ function App() {
                   checked={l.isDone}
                   onChange={() => hanldeCheckTask(index)} 
                 />
+                {isExploding && <ConfettiExplosion />}
                 {l.value}
               </li>
             ))}
