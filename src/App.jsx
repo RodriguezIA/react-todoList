@@ -14,6 +14,7 @@ function App() {
 
   const handleKeyPress = (e) => {
     if(e.key === 'Enter'){
+      
       const newItem = { value: inputValue, isDone: false };
       setItemList(newItem)
       setInputValue('')
