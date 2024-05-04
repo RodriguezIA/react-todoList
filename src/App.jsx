@@ -3,6 +3,9 @@ import { useStore } from './store/doList'
 import { useState, useEffect } from 'react'
 import ConfettiExplosion from 'react-confetti-explosion'
 
+import { CiCirclePlus, CiFilter   } from 'react-icons/ci'
+import { Task } from './components/Task'
+
 function App() {
   const { list, setItemList, checkItemList } = useStore()
   const [inputValue, setInputValue] = useState('')
@@ -38,26 +41,34 @@ function App() {
     <>
       <div className='container'>
         <div>
-          <h1>Todo List</h1>
-          <input 
+          <h1 className='title'>TO-DO</h1>
+          <div className='divider'></div>
+          {/* Buttons space */}
+          <div className='button-area'>
+            <button className='button' id='newtask'> <CiCirclePlus/> New Task</button>
+            <button className='button'> <CiFilter/> Filters</button>
+          </div>
+
+          {/* <input 
             type="text"
             value={inputValue}
             onChange={handleOnChange}
             onKeyPress={handleKeyPress} 
-          />
+          /> */}
         </div>
-        <div>
+        <div className='list'>
           <ul>
             {list.map((l, index) => (
-              <li key={index}>
-                <input
-                  type='checkbox'
-                  checked={l.isDone}
-                  onChange={() => hanldeCheckTask(index)} 
-                />
-                {isExploding && <ConfettiExplosion />}
-                {l.value}
-              </li>
+              <Task key={index} task={l}  /> 
+              // <li key={index}>
+              //   <input
+              //     type='checkbox'
+              //     checked={l.isDone}
+              //     onChange={() => hanldeCheckTask(index)} 
+              //   />
+              //   {isExploding && <ConfettiExplosion />}
+              //   {l.value}
+              // </li>
             ))}
           </ul>
         </div>
