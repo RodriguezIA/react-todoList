@@ -3,4 +3,19 @@
     border-radius: 8px;
     margin: 20px 0px;
     padding: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.task-information {
+    display: flex;
+}
+
+.task-value {
+    margin: 0;
+}
+
+input {
+    margin-right: 20px;
 }

@@ -45,8 +45,8 @@ function App() {
           <div className='divider'></div>
           {/* Buttons space */}
           <div className='button-area'>
-            <button className='button' id='newtask'> <CiCirclePlus/> New Task</button>
-            <button className='button'> <CiFilter/> Filters</button>
+            <button className='button' id='newtask'> <CiCirclePlus className='icon'/> New Task</button>
+            <button className='button'> <CiFilter className='icon' /> Filters</button>
           </div>
 
           {/* <input 
