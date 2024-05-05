@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import "./Task.css"
+import { CiCalendar   } from 'react-icons/ci'
+import { IoChatbubbleOutline } from "react-icons/io5";
+import { GiPaperClip } from "react-icons/gi";
 
 export function Task ({task}){
     return(
@@ -10,9 +13,18 @@ export function Task ({task}){
             <div>
                 <p className="task-value">{task.value}</p>
                 <div className="task-information">
-                    <div>Date</div>
-                    <div>comments</div>
-                    <div>attackment</div>
+                    <div className="info">
+                        <CiCalendar />
+                        Date
+                    </div>
+                    <div className="info">
+                        <IoChatbubbleOutline/>
+                        comments
+                    </div>
+                    <div className="info">
+                        <GiPaperClip />
+                        attackment
+                    </div>
                 </div>
                 <div>
                     tags

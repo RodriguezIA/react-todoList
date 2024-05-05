@@ -10,6 +10,7 @@
 
 .task-information {
     display: flex;
+    margin-top: 20px;
 }
 
 .task-value {
@@ -18,4 +19,12 @@
 
 input {
     margin-right: 20px;
+}
+
+.info {
+    margin-right: 20px;
+}
+
+.info:last-child {
+    margin-right: 0;
 }
