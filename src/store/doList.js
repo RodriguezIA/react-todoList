@@ -7,14 +7,9 @@ const useStore = create(
     persist(
         (set, get) => ({
             list: [],
-            setItemList: (newItem) => set((state) => ({ list: [...state.list, newItem] })),
-            checkItemList: (index) => set((state) => {
-                const updateList = [...state.list]
-        
-                updateList[index].isDone = !updateList[index].isDone
-        
-                return { list: updateList }
-            })
+            tags: [
+                { id: 0, name: 'Urgent' }
+            ]
         }), {
             name: 'react-todoList-storage',
             storage: createJSONStorage(() => localStorage)

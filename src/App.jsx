@@ -2,7 +2,7 @@ import './App.css'
 import { useStore } from './store/doList'
 import { CiFilter   } from 'react-icons/ci'
 import { Task } from './components/Task'
-import { CreateButton } from './components/CreateButton'
+import { CreateButton } from './components/Button/CreateButton'
 import { Divider } from './components/Divider/Divider'
 
 function App() {
